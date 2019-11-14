@@ -5,7 +5,6 @@ const verifyAccountId = async (req, res, next) => {
 
   try {
     const result = await get({ id });
-    console.log('line 8');
     if (result === undefined) return res.status(404).json({ message: `No account found under id ${id}` });
     req.account = result;
   } catch (error) {

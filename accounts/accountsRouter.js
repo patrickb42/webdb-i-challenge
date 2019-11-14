@@ -18,7 +18,6 @@ router.get('/', async (req, res) => {
       ? res.status(404).json({ message: 'no accounts found' })
       : res.status(200).json(result);
   } catch (error) {
-    console.log(error);
     return res.status(500).json({
       error: error.response,
       message: 'Error getting accounts',
