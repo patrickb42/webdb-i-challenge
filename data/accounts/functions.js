@@ -2,7 +2,7 @@ const db = require('../dbConfig.js');
 
 const TABLE = 'accounts';
 
-const get = ({ id }) => {
+const get = ({ id } = {}) => {
   return (id === undefined)
     ? db(TABLE)
     : db(TABLE)

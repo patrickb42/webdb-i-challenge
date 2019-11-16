@@ -13,8 +13,8 @@ const {
 
 router.get('/', async (req, res) => {
   try {
-    const result = await getAccounts({});
-    return (result === undefined)
+    const result = await getAccounts();
+    return (result.length === 0)
       ? res.status(404).json({ message: 'no accounts found' })
       : res.status(200).json(result);
   } catch (error) {
